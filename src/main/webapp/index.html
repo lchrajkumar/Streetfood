@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Street Food</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #f8f9fa;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ec0d23e8;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Street Food</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"></a>
+    </li>
+    <li class="header-links__customer-account  pull-right">
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in or Sign up</button>
+        </button>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form id="rush" class="modal-content">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="text"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" required>
+      
+      <label for="text"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" name="lastname" id="lastname" required>
+      
+      <label for="text"><b>Mobile Number</b></label>
+      <input type="text" placeholder="Enter Mobile Number" name="mobile" id="mobile" required>
+      
+       
+      
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pass"  id="pass" required>
+      
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="passrepeat" id="passrepeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" id="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="http://www.seleniatech.com" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" class="signupbtn" name="register" id="register" >Sign Up</button><!-- onClick="javascript:return save(this.id)" -->
+      </div>
+    
+    </div>
+    
+    
+  </form>
+</div>
+
+<script>
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+var hrf=window.location.href.substr(0,window.location.href
+		.lastIndexOf("/"));
+		alert(hrf)
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+$(document).ready(function() {
+//alert(66)
+	
+	 	$("#register").click(function() {
+	//alert("in register function") 		
+	var fname=$("#firstname").val();
+	//alert(fname)
+	var lname=$("#lastname").val();
+	//alert(lname)
+	var password = $("#pass").val();
+	var cpassword = $("#passrepeat").val();
+	//alert(cpassword)
+	
+	 		
+	if (fname == '' || lname == '' || password == '' || cpassword == '') {
+		alert("Please fill all fields...!!!!!!");
+	}
+	else if ((password.length) < 8) {
+	alert("Password should atleast 8 character in length...!!!!!!");
+	} 
+	
+	else if (!(password).match(cpassword)) {
+	alert("Your passwords don't match. Try again?");
+	}
+	
+	
+	else{
+		//alert("in else postdata")
+		
+		var postData="fname="+fname+
+		"&lname="+lname+
+		"&password"+password+
+		"&cpassword"+cpassword;
+		
+		alert(postData)
+		
+		$.ajax
+		({
+			url :hrf+"/registration_save",
+			  type: "POST",
+			  data : postData,
+			  success:function(data, textStatus, jqXHR) 
+			  {
+				  alert("Success");
+			  },
+			  error: function(jqXHR, textStatus, errorThrown) 
+			  {
+				  alert("fail");
+			  }
+		}); 
+		
+	}//else close
+	
+	
+
+	});
+	
+	
+	});
+
+
+/*	else {
+$.post("register.php", {
+name1: name,
+email1: email,
+password1: password
+}, function(data) {
+if (data == 'You have Successfully Registered.....') {
+$("form")[0].reset();
+}
+alert(data);
+});
+} */
+
+
+/*  function save(form){
+	alert("in save function")
+	var fname=document.getElementById("firstname").value;
+	var lname=documen.getElementById("lastname").value;
+	//alert(fname)
+	//alert(lname)
+	//alert(num)
+	//alert(mail
+	//alert(pass)
+	//alert(rep_pass)
+	  
+} */ 
+</script>
+
+</body>
+</html>
